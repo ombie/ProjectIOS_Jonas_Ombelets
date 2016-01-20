@@ -5,23 +5,17 @@ class Gameboard{
     let numberOfMines:Int
     var squares:[[Square]] = [] // 2nd array, indexed by [xCo][yCo] (= [col][row]
     
-    let NUMBER_MINES_BEGINNER = 10
-    let NUMBER_MINES_ADVANCED = 40
-    
     // array which contains the squares with a mine
     var minesArray:[Square] = []
     
-    init(size:Int) {
+    init() {
+        self.size = 0
+        self.numberOfMines = 0
+    }
+    
+    init(size:Int, mines: Int) {
         self.size = size
-        
-        switch(size) {
-        case 9:
-            self.numberOfMines = 10
-            break
-        default:
-            self.numberOfMines = 0
-            break
-        }
+        self.numberOfMines = mines
         
         for col in 0 ..< size {
             var squareCol:[Square] = []
@@ -58,8 +52,8 @@ class Gameboard{
         var mines = numberOfMines
         
         while(mines > 0) {
-            let randomX = Int(arc4random_uniform(9)) // number from 0-8
-            let randomY = Int(arc4random_uniform(9))
+            let randomX = Int(arc4random_uniform(UInt32(self.size))) // number from 0 to (size-1)
+            let randomY = Int(arc4random_uniform(UInt32(self.size)))
             let newMine:Square = squares[randomX][randomY]
             
             if(!newMine.isMineLocation){

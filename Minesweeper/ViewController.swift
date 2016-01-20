@@ -9,12 +9,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var flagSwitch: UISwitch!
     
+    var boardViewWidth:CGFloat = 0
+    
     var scoreboard:Scoreboard
     
     var difficulty:Difficulty!
     
-    let BOARD_SIZE:Int = 9
-    var board:Gameboard
+    var BOARD_SIZE:Int!
+    var board:Gameboard!
     var squareButtons:[[SquareButton]] = []
     
     var moves:Int = 0 {
@@ -24,18 +26,16 @@ class ViewController: UIViewController {
         }
     }
     
-    var minesLeft:Int = 10 {
-        didSet{
+    var minesLeft:Int = 0 {
+        didSet {
             self.mineLabel.text = "Mines left: \(minesLeft)"
-            //self.mineLabel.sizeToFit()
         }
     }
-    var minesLeftCorrectly: Int = 10
+    var minesLeftCorrectly: Int = 0
     
-    var timeTaken:Int = 0  {
+    var timeTaken:Int = 0 {
         didSet {
             self.timeLabel.text = "Time: \(timeTaken)"
-            //self.timeLabel.sizeToFit()
         }
     }
     
@@ -46,18 +46,30 @@ class ViewController: UIViewController {
     // optional => give nil value tot timer between an ended game and a new game
     var oneSecondTimer:NSTimer?
     
+    var playersName:String!
+    
     // custom init method
-    required init(coder aDecoder: NSCoder)
-    {
-        self.board = Gameboard(size: BOARD_SIZE)
+    required init(coder aDecoder: NSCoder) {
+        if (difficulty != nil) {
+            self.BOARD_SIZE = difficulty.numberOfTiles
+            self.board = Gameboard(size: BOARD_SIZE, mines: difficulty.numberOfMines)
+            self.minesLeft = difficulty.numberOfMines
+            self.minesLeftCorrectly = minesLeft
+        } else {
+            self.BOARD_SIZE = 0
+        }
         self.scoreboard = Scoreboard()
-        //self.difficulty =
         super.init(coder: aDecoder)!
     }
     
     // initializing the board
     func initializeBoard() {
-        let squareSize:CGFloat = self.boardView.frame.width / (CGFloat(BOARD_SIZE)*2)
+        self.BOARD_SIZE = difficulty.numberOfTiles
+        self.board = Gameboard(size: difficulty.numberOfTiles, mines: difficulty.numberOfMines)
+        self.minesLeft = difficulty.numberOfMines
+        self.minesLeftCorrectly = minesLeft
+        
+        let squareSize:CGFloat = self.boardViewWidth / (CGFloat(difficulty.numberOfTiles))
         for col in 0 ..< board.size {
             var squareBtnCol: [SquareButton] = []
             for row in 0 ..< board.size {
@@ -176,17 +188,27 @@ class ViewController: UIViewController {
         alertView.show()
         alertView.delegate = self*/
         
-        self.scoreboard.addScore(name: "", seconds: self.timeTaken, moves: self.moves)
-        print(self.scoreboard.scores)
+        
         
         var winningAlertController = UIAlertController(title: "CONGRATULATIONS!", message: "You finished the game in: \(self.timeTaken) seconds", preferredStyle: .Alert)
         
         let addHighscoreAction = UIAlertAction(title: "Add Highscore", style: .Default) {
-            (alert: UIAlertAction) -> Void in print(self.scoreboard.scores)
+            (alert: UIAlertAction) -> Void in
+            if let textField = winningAlertController.textFields?.first {
+                self.playersName = textField.text
+            };
+            self.scoreboard.addScore(name: self.playersName, seconds: self.timeTaken, moves: self.moves);
+            print(self.scoreboard.scores)
         }
         
         winningAlertController = addNewGameActionToAlertController(winningAlertController)
+        winningAlertController.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter name"
+        }
         winningAlertController.addAction(addHighscoreAction)
+        
+        //self.scoreboard.addScore(name: self.playersName, seconds: self.timeTaken, moves: self.moves)
+        //print(self.scoreboard.scores)
         
         self.presentViewController(winningAlertController, animated: true, completion: nil)
     }
@@ -245,8 +267,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //self.initializeBoard()
+        //self.startNewGame()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.boardViewWidth = self.boardView.frame.width
         self.initializeBoard()
         self.startNewGame()
+
     }
 
     override func didReceiveMemoryWarning() {

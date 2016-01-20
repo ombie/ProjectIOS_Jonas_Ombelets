@@ -13,14 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let model = DifficultyModel()
-
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        //let navigationController = window!.rootViewController! as! UINavigationController
-       //let difficultyController = navigationController.topViewController! as! DifficultyController//HomeController//
-        //difficultyController.model = model
-        //model.loadDummyData()
+        let navigationController = window!.rootViewController! as! UINavigationController
+        let homeController = navigationController.topViewController! as! HomeController
         return true
     }
 

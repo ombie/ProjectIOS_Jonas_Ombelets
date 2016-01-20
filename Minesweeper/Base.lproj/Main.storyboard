@@ -6,7 +6,23 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="h6J-IC-pZY">
+            <objects>
+                <navigationController id="B4q-U9-CIx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hkx-Zh-fg8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rvf-zK-lFC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TBS-0t-EHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2572" y="-370"/>
+        </scene>
+        <!--Minesweeper-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Minesweeper" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,12 +66,6 @@
                                     <constraint firstItem="Fvh-un-9zC" firstAttribute="leading" secondItem="TQL-eh-YiK" secondAttribute="leading" id="pj0-WN-1sH"/>
                                 </constraints>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QE2-oj-1En">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Minesweeper" id="zMy-Ng-KW6"/>
-                                </items>
-                            </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5L-Nb-MSU">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
@@ -73,7 +83,7 @@
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64R-lY-fuE">
-                                <rect key="frame" x="20" y="69" width="560" height="560"/>
+                                <rect key="frame" x="20" y="84" width="560" height="560"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="64R-lY-fuE" secondAttribute="width" id="gTW-hL-65q"/>
@@ -82,30 +92,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TQL-eh-YiK" firstAttribute="top" secondItem="64R-lY-fuE" secondAttribute="bottom" constant="50" id="0BJ-IP-ZKW"/>
-                            <constraint firstItem="64R-lY-fuE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Wi-fv-V0z"/>
                             <constraint firstItem="64R-lY-fuE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3He-M1-I4g"/>
-                            <constraint firstItem="QE2-oj-1En" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5Ft-IA-RtZ"/>
                             <constraint firstItem="TQL-eh-YiK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9gI-Iu-5Am"/>
-                            <constraint firstItem="64R-lY-fuE" firstAttribute="top" secondItem="QE2-oj-1En" secondAttribute="bottom" constant="25" id="Ahb-hA-O6U"/>
-                            <constraint firstItem="A5L-Nb-MSU" firstAttribute="leading" secondItem="QE2-oj-1En" secondAttribute="leading" id="BUc-Va-aAn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A5L-Nb-MSU" secondAttribute="bottom" id="Fp7-UN-LEX"/>
                             <constraint firstItem="64R-lY-fuE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IOe-py-Ptn"/>
-                            <constraint firstItem="QE2-oj-1En" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KWy-96-y6C"/>
+                            <constraint firstItem="A5L-Nb-MSU" firstAttribute="centerX" secondItem="TQL-eh-YiK" secondAttribute="centerX" id="KrB-0o-WoP"/>
                             <constraint firstItem="TQL-eh-YiK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SRe-dz-ul1"/>
-                            <constraint firstItem="A5L-Nb-MSU" firstAttribute="trailing" secondItem="QE2-oj-1En" secondAttribute="trailing" id="jP1-kz-ryB"/>
                             <constraint firstItem="TQL-eh-YiK" firstAttribute="bottom" secondItem="A5L-Nb-MSU" secondAttribute="top" constant="-20" id="mnc-FY-Xr9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QE2-oj-1En" secondAttribute="trailing" constant="-20" id="vAU-Fv-YRf"/>
-                            <constraint firstItem="64R-lY-fuE" firstAttribute="centerX" secondItem="QE2-oj-1En" secondAttribute="centerX" id="yDQ-Dy-MfB"/>
+                            <constraint firstItem="A5L-Nb-MSU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qmw-eb-HEK"/>
+                            <constraint firstItem="64R-lY-fuE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="tOS-vn-HzL"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="2Wi-fv-V0z"/>
-                                <exclude reference="yDQ-Dy-MfB"/>
-                                <exclude reference="0BJ-IP-ZKW"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Minesweeper" id="hHA-u1-lgG">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="oyi-yA-Gea" userLabel="Back">
+                            <connections>
+                                <segue destination="nfF-bn-u6t" kind="unwind" identifier="didPlay" unwindAction="unwindFromPlay:" id="fAp-bx-aCQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="boardView" destination="64R-lY-fuE" id="Js1-Os-TwJ"/>
                         <outlet property="flagSwitch" destination="lAL-Sq-9gU" id="GWu-tB-o3v"/>
@@ -115,8 +119,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="nfF-bn-u6t" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="268" y="415"/>
+            <point key="canvasLocation" x="1806" y="115"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="6dp-fu-kl4">
@@ -132,11 +137,6 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncg-W3-Yt8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Minesweeper" id="MOk-n3-0tV">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="s79-0b-Gmh"/>
-                                    </navigationItem>
-                                </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="49d-NM-D6a">
                                 <rect key="frame" x="261" y="94" width="78" height="150"/>
@@ -145,7 +145,7 @@
                                         <rect key="frame" x="21" y="0.0" width="36" height="30"/>
                                         <state key="normal" title="PLAY"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorView="cKV-CB-ZaP" id="Im4-j0-wgd">
+                                            <segue destination="5W0-j8-kXH" kind="popoverPresentation" identifier="play" popoverAnchorView="cKV-CB-ZaP" id="7HK-hE-Vla">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -163,23 +163,45 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGP-CE-XSN">
                                         <rect key="frame" x="24" y="120" width="30" height="30"/>
                                         <state key="normal" title="?"/>
+                                        <connections>
+                                            <action selector="showInfo" destination="sfD-69-gRx" eventType="touchUpInside" id="s52-al-zyz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-Nn-Zbk">
+                                <rect key="frame" x="20" y="299" width="560" height="281"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <string key="text">Dit project werd gemaakt door Jonas Ombelets in opdracht van het vak Native apps II: mobile apps for IOS.
+
+Het spel bestaat uit een veld met gesloten vakjes, waarvan onder enkele vakjes een mijn verstopt zit. Het hoofddoel is zo snel mogelijk alle vakjes waar zich geen mijn bevindt te identificeren. In het begin klikt men een vakje in het veld aan, hopend dat er geen mijn onderzit. Als dit niet het geval is, zal er een nummer tussen 1 en 8 verschijnen, of een veld met meerdere nummers. Dit nummer geeft aan hoeveel mijnen er aan dit vlakje grenzen, dit kunnen vakjes zijn die aan naast elkaar staan, of schuin van elkaar staan. Hier van uit gaande kan men alle mijnen ontwijken door de nummers op de verschillende aangeklikte vlakjes logisch te combineren.
+
+Velden waarvan men verwacht dat er een mijn achter zit, kan men markeren.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ncg-W3-Yt8" firstAttribute="leading" secondItem="XVa-Jc-QpH" secondAttribute="leading" id="8Em-oa-YbX"/>
                             <constraint firstItem="ncg-W3-Yt8" firstAttribute="top" secondItem="XVa-Jc-QpH" secondAttribute="top" id="Fda-bV-se0"/>
+                            <constraint firstItem="pCU-Nn-Zbk" firstAttribute="top" secondItem="49d-NM-D6a" secondAttribute="bottom" constant="55" id="FpU-r0-b5O"/>
+                            <constraint firstItem="pCU-Nn-Zbk" firstAttribute="leading" secondItem="XVa-Jc-QpH" secondAttribute="leadingMargin" id="IUS-qq-0Hb"/>
                             <constraint firstItem="49d-NM-D6a" firstAttribute="top" secondItem="ncg-W3-Yt8" secondAttribute="bottom" constant="50" id="RAb-a4-sr3"/>
                             <constraint firstAttribute="trailing" secondItem="ncg-W3-Yt8" secondAttribute="trailing" id="UUr-nh-3pj"/>
+                            <constraint firstItem="pCU-Nn-Zbk" firstAttribute="trailing" secondItem="XVa-Jc-QpH" secondAttribute="trailingMargin" id="oDN-oj-jX5"/>
+                            <constraint firstAttribute="bottom" secondItem="pCU-Nn-Zbk" secondAttribute="bottom" constant="20" symbolic="YES" id="oen-Fh-ItL"/>
                             <constraint firstItem="ncg-W3-Yt8" firstAttribute="centerX" secondItem="49d-NM-D6a" secondAttribute="centerX" id="wwS-7U-CnI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cdU-BG-AqE"/>
+                    <navigationItem key="navigationItem" title="Minesweeper" id="cdU-BG-AqE"/>
                     <connections>
                         <outlet property="highscoreButton" destination="RUT-eh-kFM" id="LQ4-wN-3A2"/>
                         <outlet property="infoButton" destination="OGP-CE-XSN" id="7Uc-w1-84l"/>
+                        <outlet property="infoView" destination="pCU-Nn-Zbk" id="ls0-oy-deR"/>
                         <outlet property="playButton" destination="cKV-CB-ZaP" id="Ki2-Yt-L4r"/>
                     </connections>
                 </viewController>
@@ -194,34 +216,35 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qji-9T-eiO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ogi-cd-7S9">
-                            <size key="itemSize" width="182" height="140"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="32" minimumInteritemSpacing="16" id="Ogi-cd-7S9">
+                            <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="66L-ui-T6Q" customClass="PlayDifficultyCell" customModule="Minesweeper" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="182" height="140"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playDifficultyCell" id="66L-ui-T6Q" userLabel="playDifficultyCell" customClass="PlayDifficultyCell" customModule="Minesweeper" customModuleProvider="target">
+                                <rect key="frame" x="16" y="130" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="182" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beginner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-Sq-eF8" userLabel="Name Label">
-                                            <rect key="frame" x="57" y="8" width="68.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="81 Tiles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BD-hs-H2c" userLabel="Tiles Label">
+                                            <rect key="frame" x="46" y="65" width="58.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="81 Tiles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BD-hs-H2c" userLabel="Tiles Label">
-                                            <rect key="frame" x="62" y="59" width="58.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 Mines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeI-ha-A9a" userLabel="Mines Label">
+                                            <rect key="frame" x="45" y="121.5" width="60.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9 Mines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeI-ha-A9a" userLabel="Mines Label">
-                                            <rect key="frame" x="61" y="111" width="60.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beginner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-Sq-eF8" userLabel="Name Label">
+                                            <rect key="frame" x="41" y="8" width="68.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -229,6 +252,14 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="aeI-ha-A9a" firstAttribute="bottom" secondItem="66L-ui-T6Q" secondAttribute="bottomMargin" id="2fu-mP-cRB"/>
+                                    <constraint firstItem="aeI-ha-A9a" firstAttribute="centerX" secondItem="66L-ui-T6Q" secondAttribute="centerX" id="4xe-Dj-PKT"/>
+                                    <constraint firstItem="rh3-Sq-eF8" firstAttribute="centerX" secondItem="66L-ui-T6Q" secondAttribute="centerX" id="Q0P-VM-Cxx"/>
+                                    <constraint firstItem="rh3-Sq-eF8" firstAttribute="top" secondItem="66L-ui-T6Q" secondAttribute="topMargin" id="rRi-3c-wuP"/>
+                                    <constraint firstItem="7BD-hs-H2c" firstAttribute="centerY" secondItem="66L-ui-T6Q" secondAttribute="centerY" id="uCY-0X-W1b"/>
+                                    <constraint firstItem="7BD-hs-H2c" firstAttribute="centerX" secondItem="66L-ui-T6Q" secondAttribute="centerX" id="zKQ-Sq-iry"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="mineLabel" destination="aeI-ha-A9a" id="TWq-JE-gqP"/>
                                     <outlet property="nameLabel" destination="rh3-Sq-eF8" id="Uyg-1V-BzW"/>
@@ -236,26 +267,43 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kzu-W1-ZE6" customClass="HeaderCell" customModule="Minesweeper" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerCell" id="kzu-W1-ZE6" userLabel="headerCell" customClass="HeaderCell" customModule="Minesweeper" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your difficulty level to play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htc-5T-4Ik">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your difficulty level to play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htc-5T-4Ik" userLabel="Title Label">
                                     <rect key="frame" x="8" y="14" width="263" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <connections>
+                                <outlet property="titleLabel" destination="Htc-5T-4Ik" id="w0Q-6D-VZP"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="jMO-Ic-iCq" id="eGg-VX-is4"/>
                             <outlet property="delegate" destination="jMO-Ic-iCq" id="uFV-Zn-oxj"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Difficulty" id="teE-vN-Gi5" userLabel="Difficulty"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Difficulty" id="teE-vN-Gi5" userLabel="Difficulty">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="gve-Pu-cZv" userLabel="Back">
+                            <connections>
+                                <segue destination="6SS-e5-lao" kind="unwind" identifier="didChooseDif" unwindAction="unwindFromDif:" id="6BH-Ul-3NP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="B4q-U9-CIx" kind="popoverPresentation" identifier="play" popoverAnchorView="qji-9T-eiO" id="OhV-Va-C7W">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXV-vk-y8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6SS-e5-lao" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1806" y="-606"/>
         </scene>

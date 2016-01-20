@@ -19,8 +19,8 @@
 		DDB96E6B1C496290000F5F0D /* PlayDifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB96E6A1C496290000F5F0D /* PlayDifficultyCell.swift */; settings = {ASSET_TAGS = (); }; };
 		DDB96E6D1C49635A000F5F0D /* DifficultyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB96E6C1C49635A000F5F0D /* DifficultyModel.swift */; settings = {ASSET_TAGS = (); }; };
 		DDB96E6F1C4963BD000F5F0D /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB96E6E1C4963BD000F5F0D /* Difficulty.swift */; settings = {ASSET_TAGS = (); }; };
+		DDB96E711C497F5E000F5F0D /* DifficultyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB96E701C497F5E000F5F0D /* DifficultyController.swift */; settings = {ASSET_TAGS = (); }; };
 		DDB96E731C498222000F5F0D /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB96E721C498222000F5F0D /* HeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
-		DDB96E761C49A953000F5F0D /* DifficultyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB96E751C49A953000F5F0D /* DifficultyController.swift */; settings = {ASSET_TAGS = (); }; };
 		DDF8E4061C28663D001035A3 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF8E4051C28663D001035A3 /* Scoreboard.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -39,8 +39,8 @@
 		DDB96E6A1C496290000F5F0D /* PlayDifficultyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayDifficultyCell.swift; sourceTree = "<group>"; };
 		DDB96E6C1C49635A000F5F0D /* DifficultyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyModel.swift; sourceTree = "<group>"; };
 		DDB96E6E1C4963BD000F5F0D /* Difficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		DDB96E701C497F5E000F5F0D /* DifficultyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DifficultyController.swift; path = ../DifficultyController.swift; sourceTree = "<group>"; };
 		DDB96E721C498222000F5F0D /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
-		DDB96E751C49A953000F5F0D /* DifficultyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DifficultyController.swift; path = ../../Desktop/DifficultyController.swift; sourceTree = "<group>"; };
 		DDF8E4051C28663D001035A3 /* Scoreboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +74,6 @@
 		DD63F6031C1711CD0041FEC5 /* Minesweeper */ = {
 			isa = PBXGroup;
 			children = (
-				DD63F6061C1711CD0041FEC5 /* ViewController.swift */,
 				DDB96E741C498ABA000F5F0D /* Controllers */,
 				DD63F6041C1711CD0041FEC5 /* AppDelegate.swift */,
 				DDB96E671C4949DC000F5F0D /* Model */,
@@ -85,7 +84,6 @@
 				DDF8E4051C28663D001035A3 /* Scoreboard.swift */,
 				DDB96E6A1C496290000F5F0D /* PlayDifficultyCell.swift */,
 				DDB96E721C498222000F5F0D /* HeaderCell.swift */,
-				DDB96E751C49A953000F5F0D /* DifficultyController.swift */,
 			);
 			path = Minesweeper;
 			sourceTree = "<group>";
@@ -105,7 +103,9 @@
 		DDB96E741C498ABA000F5F0D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DD63F6061C1711CD0041FEC5 /* ViewController.swift */,
 				DDB96E681C4951CE000F5F0D /* HomeController.swift */,
+				DDB96E701C497F5E000F5F0D /* DifficultyController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -183,8 +183,8 @@
 				DD63F61B1C1816160041FEC5 /* SquareButton.swift in Sources */,
 				DD63F6191C180EF10041FEC5 /* Gameboard.swift in Sources */,
 				DDB96E6F1C4963BD000F5F0D /* Difficulty.swift in Sources */,
+				DDB96E711C497F5E000F5F0D /* DifficultyController.swift in Sources */,
 				DDB96E731C498222000F5F0D /* HeaderCell.swift in Sources */,
-				DDB96E761C49A953000F5F0D /* DifficultyController.swift in Sources */,
 				DDB96E6D1C49635A000F5F0D /* DifficultyModel.swift in Sources */,
 				DDB96E691C4951CE000F5F0D /* HomeController.swift in Sources */,
 				DD63F6171C17269F0041FEC5 /* Square.swift in Sources */,

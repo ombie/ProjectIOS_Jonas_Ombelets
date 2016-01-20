@@ -18,6 +18,7 @@ class SquareButton : UIButton {
         let squareFrame = CGRectMake(x, y, squareSize, squareSize)
         
         super.init(frame: squareFrame)
+        self.layer.borderWidth = 0.5
     }
     
     required init(coder aDecoder: NSCoder) {
